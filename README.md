@@ -36,16 +36,16 @@ This project is an **end-to-end automated pipeline** for predicting NBA game sco
    
 3. **Model Training & Prediction**:
    - Feature engineering is performed to optimize model accuracy and avoid overfitting.
-   - Machine learning models are trained on historical data.
+   - Machine learning models are trained on historical data via AWS SageMaker Studio.
    - Trained models are stored in AWS S3.
    - A script fetches daily team stats, applies models, and predicts scores.
    
 4. **Automated Prediction & Notification**:
-   - A script runs daily to:
+   - An AWS Lambda script runs daily via AWS EventBridge to:
      - Collect the day's games
      - Retrieve current team stats
      - Apply machine learning models
-     - Send prediction results via email at 10:30 AM.
+     - Send prediction results via email at 12:15 PM EST.
    
 ## Areas for Improvement
 - **Expand Data Inputs**: Incorporate player-level statistics to refine predictions.
@@ -57,6 +57,7 @@ This project is an **end-to-end automated pipeline** for predicting NBA game sco
 - Develop an **automated accuracy tracking system** to measure prediction performance.
 - Implement reinforcement learning techniques for continuous model improvement.
 - Enhance prediction models with **real-time injury reports and betting lines**.
+- Use different seasonal data to create more diverse, and potentially more accurate models.
 
 ## Getting Started
 ### Prerequisites
